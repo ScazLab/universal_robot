@@ -169,7 +169,7 @@
       <origin xyz="${__kinematics['forearm']['x']} ${__kinematics['forearm']['y']} ${__kinematics['forearm']['z']}" rpy="${__kinematics['forearm']['roll']} ${__kinematics['forearm']['pitch']} ${__kinematics['forearm']['yaw']}" />
       <axis xyz="0 0 1" />
       <xacro:unless value="${joint_limited}">
-        <limit lower="${-pi}" upper="${pi}" effort="150.0" velocity="3.14"/>
+        <limit lower="${-2.0 * pi}" upper="${2.0 * pi}" effort="150.0" velocity="3.14"/>
         <xacro:if value="${safety_limits}">
           <safety_controller soft_lower_limit="${-2.0 * pi + safety_pos_margin}" soft_upper_limit="${2.0 * pi - safety_pos_margin}" k_position="${safety_k_position}" k_velocity="0.0"/>
         </xacro:if>
@@ -342,7 +342,7 @@
       </collision>
     </link>
 
-    <xacro:ur_arm_transmission prefix="${prefix}" hw_interface="${transmission_hw_interface}" />
+    <xacro:ur_arm_transmission prefix="${prefix}" />
     <xacro:ur_arm_gazebo prefix="${prefix}" />
 
     <!-- ROS base_link to UR 'Base' Coordinates transform -->
