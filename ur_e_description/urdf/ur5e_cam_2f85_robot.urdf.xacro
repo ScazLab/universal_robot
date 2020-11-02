@@ -36,7 +36,7 @@
   <joint name="cam_gripper_joint" type="fixed">
     <parent link="robotiq_cam_link" />
     <child link = "robotiq_arg2f_base_link" />
-    <origin xyz="0.0 0.0 0.0112" rpy="0.0 0.0 0.0" />
+    <origin xyz="0.0 0.0 0.0112" rpy="0.0 0.0 ${pi / 2.0}" />
   </joint>
 
 <!--   <link name="virtual_ee_link">
@@ -51,12 +51,19 @@
       </visual>
   </link> -->
 
-  <link name="virtual_ee_link" />
+<!--   <link name="virtual_ee_link" />
   <joint name="virtual_ee_joint" type="fixed">
     <parent link="tool0" />
     <child link = "virtual_ee_link" />
     <origin xyz="0.0 0.0 0.1654" rpy="0.0 0.0 0.0" />
-    <!-- <origin xyz="0.0 0.0 0.1445" rpy="0.0 0.0 0.0" /> -->
+  </joint> -->
+
+  <link name="virtual_ee_link" />
+
+  <joint name="virtual_ee_joint" type="fixed">
+    <parent link="robotiq_arg2f_base_link" />
+    <child link = "virtual_ee_link" />
+    <origin xyz="0.0 0.0 0.1445" rpy="0.0 0.0 0.0" />
   </joint>
 
 </robot>
