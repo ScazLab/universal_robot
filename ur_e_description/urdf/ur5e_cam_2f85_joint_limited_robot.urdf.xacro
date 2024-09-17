@@ -23,16 +23,55 @@
     wrist_3_lower_limit="${-2.0 * pi}" wrist_3_upper_limit="${2.0 * pi}"
     kinematics_file="${load_yaml('$(arg kinematics_config)')}"
   /> -->
-  <xacro:ur5e_robot prefix="" joint_limited="true"
-    shoulder_pan_lower_limit="${-pi * 2.0}" shoulder_pan_upper_limit="${pi}"
-    shoulder_lift_lower_limit="${-pi}" shoulder_lift_upper_limit="${0.0}"
+
+  <!-- <xacro:ur5e_robot prefix="" joint_limited="true" -->
+  <!--   <!-\- shoulder_pan_lower_limit="${-pi * 2.0}" shoulder_pan_upper_limit="${pi}" -\-> -->
+  <!--   shoulder_pan_lower_limit="${pi * .5}" shoulder_pan_upper_limit="${pi * 1.5}" -->
+  <!--   <!-\- shoulder_lift_lower_limit="${-pi}" shoulder_lift_upper_limit="${0.0}" -\-> -->
+  <!--   shoulder_lift_lower_limit="${-pi * .5}" shoulder_lift_upper_limit="${0.0}" -->
+  <!--   elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}" -->
+  <!--   wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}" -->
+  <!--   wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${pi}" -->
+  <!--   wrist_3_lower_limit="${-2.0 * pi}" wrist_3_upper_limit="${pi * 2.0}" -->
+  <!--   kinematics_file="${load_yaml('$(arg kinematics_config)')}" -->
+  <!-- /> -->
+
+<!-- CHEFBOT below -->
+    <xacro:ur5e_robot prefix="" joint_limited="true"
+    shoulder_pan_lower_limit="${pi * .5}" shoulder_pan_upper_limit="${pi * 1.5}"
+    shoulder_lift_lower_limit="${-pi * .5}" shoulder_lift_upper_limit="${0.0}"
     elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}"
     wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}"
-    wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${pi}"
+    wrist_2_lower_limit="${0}" wrist_2_upper_limit="${pi}"
     wrist_3_lower_limit="${-2.0 * pi}" wrist_3_upper_limit="${pi * 2.0}"
     kinematics_file="${load_yaml('$(arg kinematics_config)')}"
   />
-  <xacro:robotiq_cam prefix=""/>
+  <xacro:robotiq_cam prefix=""/>  
+
+<!-- PUPPETEERS below -->
+<!--  <xacro:ur5e_robot prefix="" joint_limited="true"
+    shoulder_pan_lower_limit="${pi * .5}" shoulder_pan_upper_limit="${pi * 1.5}"
+    shoulder_lift_lower_limit="${-pi * .75}" shoulder_lift_upper_limit="${0.0}"
+    elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}"
+    wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}"
+    wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${0}"
+    wrist_3_lower_limit="${-2.0 * pi}" wrist_3_upper_limit="${pi * 2.0}"
+    kinematics_file="${load_yaml('$(arg kinematics_config)')}"
+  />
+  <xacro:robotiq_cam prefix=""/> -->
+
+<!-- DRAZEN below -->
+<!-- <xacro:ur5e_robot prefix="" joint_limited="true"
+    shoulder_pan_lower_limit="${pi * .5}" shoulder_pan_upper_limit="${pi * 1.5}"
+    shoulder_lift_lower_limit="${-pi * .9}" shoulder_lift_upper_limit="${-pi * .25}"
+    elbow_joint_lower_limit="${-pi}" elbow_joint_upper_limit="${pi}"
+    wrist_1_lower_limit="${-1.2 * pi}" wrist_1_upper_limit="${0}"
+    wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${0}"
+    wrist_3_lower_limit="${-1.4 * pi}" wrist_3_upper_limit="${pi}"
+    kinematics_file="${load_yaml('$(arg kinematics_config)')}"
+  />
+  <xacro:robotiq_cam prefix=""/>  -->
+
 
   <link name="world" />
 
